@@ -10,6 +10,8 @@ import { Provider } from "react-redux";
 import store from "./js/store/index";
 import App from "./js/components/presentational/App";
 
+import "./styles.css";
+
 render(
   <Provider store={store}>
     <App />

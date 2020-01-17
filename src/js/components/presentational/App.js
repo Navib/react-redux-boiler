@@ -2,11 +2,12 @@ import React from "react";
 import List from "../containers/List";
 import Form from "./Form";
 import Post from "../containers/Posts";
+import styles from "./app.module.css";
 
 const App = () => (
   <>
     <div>
-      <h2>Articles</h2>
+      <h2 className={styles.colorRed}>Articles</h2>
       <List />
     </div>
     <div>
