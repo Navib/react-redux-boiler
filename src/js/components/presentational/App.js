@@ -3,11 +3,16 @@ import List from "../containers/List";
 import Form from "./Form";
 import Post from "../containers/Posts";
 import styles from "./app.module.css";
+import sass from "./app.module.scss";
 
 const App = () => (
   <>
     <div>
       <h2 className={styles.colorRed}>Articles</h2>
+      <div class={sass.purpleFw}>
+        <div class="one">Purple</div>
+        <div class="two">Green</div>
+      </div>
       <List />
     </div>
     <div>
