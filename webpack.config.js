@@ -1,4 +1,6 @@
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -76,10 +78,19 @@ module.exports = {
       {
         test: /\.svg$/,
         use: "file-loader"
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ["file-loader"]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
@@ -89,6 +100,10 @@ module.exports = {
       chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css"
     })
   ],
+  output: {
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist")
+  },
   resolve: {
     extensions: [".js", ".jsx", ".scss"]
   }

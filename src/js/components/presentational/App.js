@@ -9,9 +9,9 @@ const App = () => (
   <>
     <div>
       <h2 className={styles.colorRed}>Articles</h2>
-      <div class={sass.purpleFw}>
-        <div class="one">Purple</div>
-        <div class="two">Green</div>
+      <div className={sass.purpleFw}>
+        <div className="one">Purple</div>
+        <div className="two">Green</div>
       </div>
       <List />
     </div>
